@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "module": "esnext", // commonjs?
+    "sourceMap": true,
+//    "target": "es5",
+    "target": "es2015",
+    "lib": ["dom", "esnext"],
+    "jsx": "react-jsx",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "Node",
+    // todo: this should enable us to import from the top directory but it doesn't work work for webpack imports like styles; see @ usage in webpack
+    "baseUrl": "src"
+    //    "paths": {
+//      "*": ["*", "./src/*"]
+//    }
+  },
+  "include": [
+    "src"
+//    "other/src"
+    //    "src/types"
+
+  ],
+    "exclude": [
+      "src/exp"
+//      "../backend",  // todo: can we prevent access to backend directory?
+//      "../node_modules" // is this doing anything?
+    ]
+}

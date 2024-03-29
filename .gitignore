@@ -1,0 +1,10 @@
+dist/
+node_modules/
+db/
+other/
+.yarn
+
+.gitmsg
+
+# automatically generated
+#frontend/src/types/*

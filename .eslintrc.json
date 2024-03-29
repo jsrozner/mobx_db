@@ -1,0 +1,79 @@
+{
+  // --- todo: what follows should be in a shared eslint config ----
+  "parser": "@typescript-eslint/parser",
+  "plugins": [
+    "@typescript-eslint"
+  ],
+  // todo: can i put parseroptions tsconfig.json here?
+  "rules": {
+    //    "no-restricted-imports": ["error", {
+    //      "patterns": [
+    //        "**/../backend/*"
+    ////        "!types/backend/*"
+    //      ]
+    //    }]
+    //    "quotes": ["error", "single"] // you can remove if you want
+    "@typescript-eslint/no-unnecessary-type-assertion": "error"
+  },
+  "extends": [
+    "eslint:recommended",
+    "eslint-config-prettier", //todo: use prettier
+
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:promise/recommended",
+    "plugin:prettier/recommended"
+  ],
+  // ---- end shared ----
+
+
+
+  // todo consider using parser: @babel/eslint-parser
+  "parserOptions": {
+    "project": ["./tsconfig.json"]
+  },
+
+
+  "overrides": [
+    // react config (todo: could perhaps just leave this at top level since it's all the files here
+    {
+      "files": ["*.ts", "*.tsx"],
+      "settings": { "react": { "version": "detect" } },
+      // note that these are merged with top level
+      "plugins": ["react-hooks"], // might be unncessary if we are extending all of its config
+      "extends": [
+        "plugin:react/recommended",
+        "plugin:react-hooks/recommended",
+        "plugin:testing-library/react"
+      ],
+      "rules": {
+        "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
+        "react-hooks/exhaustive-deps": "warn" // Checks effect dependencies// Add your custom rules here
+      },
+      // note that this overwrites top level
+      "env": {
+        "browser": true,
+        "es6": true
+      }
+    },
+
+    // testing overrides (should be shared)
+    {
+      "files": ["*.test.js", "*.spec.js"],
+      "plugins": [
+        "jest"
+      ],
+      "env": {
+        "jest": true
+        // compare jest/globals
+      },
+      "rules": {
+        "no-unused-expressions": "off",
+        "no-undef": "off"
+      }
+    }
+  ]
+}
