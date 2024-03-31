@@ -24,18 +24,18 @@ export interface RefObject {
 //         : T;
 
 // Utility type to recursively unwrap Ref types in an object
-export type UnwrapRefs<T> =
-  T extends Ref<infer U>
-    ? UnwrapRef<U>
-    : T extends (infer V)[]
-      ? UnwrapRef<V>[]
-      : T extends object
-        ? { [K in keyof T]: UnwrapRefs<T[K]> }
-        : T;
-
-export type NoObjectId<T> = Exclude<T, Types.ObjectId>;
-export type UnwrapRef<T> = T extends Ref<infer X> ? NoObjectId<X> : T;
-export type UnwrapRefArray<T> = T extends (infer V)[] ? UnwrapRef<V>[] : T;
+// export type UnwrapRefs<T> =
+//   T extends Ref<infer U>
+//     ? UnwrapRef<U>
+//     : T extends (infer V)[]
+//       ? UnwrapRef<V>[]
+//       : T extends object
+//         ? { [K in keyof T]: UnwrapRefs<T[K]> }
+//         : T;
+//
+// export type NoObjectId<T> = Exclude<T, Types.ObjectId>;
+// export type UnwrapRef<T> = T extends Ref<infer X> ? NoObjectId<X> : T;
+// export type UnwrapRefArray<T> = T extends (infer V)[] ? UnwrapRef<V>[] : T;
 
 @modelOptions({ schemaOptions: { timestamps: true } })
 export class BEBaseObj {
@@ -50,6 +50,9 @@ export class Contact extends BEBaseObj {
 
   @prop({ required: true, type: () => [String] })
   public emailAddr!: string[];
+
+  // @prop({ required: true, ref: () => Contact })
+  // public linkedContacts!: Ref<Contact>[];
 }
 
 export class Email extends BEBaseObj {
