@@ -1889,6 +1889,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@trpc/client@npm:^11.0.0-rc.329":
+  version: 11.0.0-rc.329
+  resolution: "@trpc/client@npm:11.0.0-rc.329"
+  peerDependencies:
+    "@trpc/server": 11.0.0-rc.329+fdcb4a7d8
+  checksum: 10c0/8ec73bf55ebe6f3876239505b79f7f58910716ac3ff175232f8c3e5d97aee4c4f97a26583ef7275cac22114015701f16e6efc83450fc18361449042f85f63481
+  languageName: node
+  linkType: hard
+
+"@trpc/server@npm:^11.0.0-rc.329":
+  version: 11.0.0-rc.329
+  resolution: "@trpc/server@npm:11.0.0-rc.329"
+  checksum: 10c0/d85c8ddb0a68fee3033f299eece704fcbdc41953c02e9f688308cdddb265818fbeff74aa6b9928814041de30fb8dee1a3ae8c2b2b1f9f1ff35524c70bcce64bb
+  languageName: node
+  linkType: hard
+
 "@typegoose/typegoose@npm:^12.2.0":
   version: 12.2.0
   resolution: "@typegoose/typegoose@npm:12.2.0"
@@ -7663,6 +7679,8 @@ __metadata:
     "@babel/core": "npm:^7.23.2"
     "@babel/preset-env": "npm:^7.23.2"
     "@babel/preset-typescript": "npm:^7.23.2"
+    "@trpc/client": "npm:^11.0.0-rc.329"
+    "@trpc/server": "npm:^11.0.0-rc.329"
     "@typegoose/typegoose": "npm:^12.2.0"
     "@types/jest": "npm:^29.5.6"
     "@types/lodash": "npm:^4.14.200"
@@ -7700,6 +7718,7 @@ __metadata:
     webpack: "npm:^5.86.0"
     webpack-cli: "npm:^5.1.4"
     webpack-dev-server: "npm:^4.15.1"
+    zod: "npm:^3.22.4"
   languageName: unknown
   linkType: soft
 
@@ -10612,6 +10631,13 @@ __metadata:
   version: 0.1.0
   resolution: "yocto-queue@npm:0.1.0"
   checksum: 10c0/dceb44c28578b31641e13695d200d34ec4ab3966a5729814d5445b194933c096b7ced71494ce53a0e8820685d1d010df8b2422e5bf2cdea7e469d97ffbea306f
+  languageName: node
+  linkType: hard
+
+"zod@npm:^3.22.4":
+  version: 3.22.4
+  resolution: "zod@npm:3.22.4"
+  checksum: 10c0/7578ab283dac0eee66a0ad0fc4a7f28c43e6745aadb3a529f59a4b851aa10872b3890398b3160f257f4b6817b4ce643debdda4fb21a2c040adda7862cab0a587
   languageName: node
   linkType: hard
 
